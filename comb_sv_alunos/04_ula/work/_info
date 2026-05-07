@@ -1,0 +1,157 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.3 2025.09, Sep 15 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/25280294/Documentos/comb_sv_alunos/04_ula
+T_opt
+!i145 1
+!i144 0
+Z2 !s110 1778155805
+Vla9YnYmAlfBEBl>ZZfG3<1
+04 2 4 work tb fast 0
+=1-d09466db3347-69fc811d-58afc-16d9
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2025.3;82
+vFA
+2FA.sv
+Z4 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+R2
+!i10b 1
+!s100 gRn06_2XnYK9DI=5R[^D<2
+I<5aSJ95acK0=CBceZ4j^W1
+S1
+R1
+Z5 w1745274834
+8FA.sv
+FFA.sv
+!i122 0
+L0 5 11
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2025.3;82
+r1
+!s85 0
+31
+Z8 !s108 1778155805.000000
+!s107 FA.sv|
+!s90 -reportprogress|300|-work|work|FA.sv|
+!i113 0
+Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@f@a
+Xp_ula
+Z10 2ula.sv
+R4
+R2
+!i10b 1
+!s100 ?f<Eme<]dWBXg;e_^lgi?0
+IeQ5^Nfi?2LRT=605AogVG2
+S1
+R1
+Z11 w1778155760
+Z12 8ula.sv
+Z13 Fula.sv
+!i122 2
+L0 9 0
+VeQ5^Nfi?2LRT=605AogVG2
+R7
+r1
+!s85 0
+31
+R8
+Z14 !s107 ula.sv|
+Z15 !s90 -reportprogress|300|-work|work|ula.sv|
+!i113 0
+R9
+R3
+vsum_sub
+2sum_sub.sv
+R4
+R2
+!i10b 1
+!s100 @_YBa?;SmMzi2WX1fUzR`3
+IT[RcLPX<g]@F=Z38]c`hF2
+S1
+R1
+R5
+8sum_sub.sv
+Fsum_sub.sv
+!i122 1
+L0 5 32
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 sum_sub.sv|
+!s90 -reportprogress|300|-work|work|sum_sub.sv|
+!i113 0
+R9
+R3
+vtb
+2tb_ula.sv
+R4
+Z16 DXx4 work 5 p_ula 0 22 eQ5^Nfi?2LRT=605AogVG2
+R2
+!i10b 1
+!s100 i]RfOTS@6=[3e=z>AAKOQ3
+IocDP2Z`E3PKDXNVV_67<60
+S1
+R1
+w1778155440
+8tb_ula.sv
+Ftb_ula.sv
+!i122 3
+L0 6 47
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 tb_ula.sv|
+!s90 -reportprogress|300|-work|work|tb_ula.sv|
+!i113 0
+R9
+R3
+vula
+R10
+R4
+R16
+R2
+!i10b 1
+!s100 77GR^8]_IF=W1`Db1iG^`0
+I1bz;LUWh9FHQePDYbn:5X2
+S1
+R1
+R11
+R12
+R13
+!i122 2
+L0 33 39
+R6
+R7
+r1
+!s85 0
+31
+R8
+R14
+R15
+!i113 0
+R9
+R3
