@@ -32,7 +32,7 @@ module controlador (
 
     assign loLD[2] = ~cmd[2] & cmd[1] & ~cmd[0];
     assign loLD[1] = cmd[2] & cmd[1] & ~cmd[0];
-    assign loLD[0] = (cmd[2] & ~cmd[1]) | (~cmd[2] & cmd[0]);
+    assign loLD[0] = ~cmd[1] | (~cmd[2] & cmd[0]);
 
     assign som = cmd[2] & ~cmd[1] & ~cmd[0];
 
