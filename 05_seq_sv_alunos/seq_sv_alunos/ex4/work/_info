@@ -1,0 +1,79 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.3 2025.09, Sep 15 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/25280294/Documentos/05_seq_sv_alunos/seq_sv_alunos/ex4
+T_opt
+!i145 1
+!i144 0
+Z2 !s110 1779365615
+V@9gdQlX@1QP_lA^]Yg[M51
+04 2 4 work tb fast 0
+=3-d09466db3347-6a0ef6ef-4806c-1256
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc=lprn
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2025.3;82
+vex4
+2ex4.sv
+Z4 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+R2
+!i10b 1
+!s100 I898Qj^K3KKK9H;C;T4kS0
+IjQ=P5za8c17E9eS1[NgNn2
+S1
+R1
+w1779365497
+8ex4.sv
+Fex4.sv
+!i122 0
+L0 9 25
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2025.3;82
+r1
+!s85 0
+31
+Z7 !s108 1779365615.000000
+!s107 ex4.sv|
+!s90 -reportprogress|300|-work|work|ex4.sv|
+!i113 0
+Z8 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vtb
+2ex4_tb.sv
+R4
+R2
+!i10b 1
+!s100 IBK:e8mjZ7^l?C1k4]Gz;2
+I?HI=Yg7cDeEZQLg=Bf?aA2
+S1
+R1
+w1779365605
+8ex4_tb.sv
+Fex4_tb.sv
+!i122 1
+L0 5 21
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 ex4_tb.sv|
+!s90 -reportprogress|300|-work|work|ex4_tb.sv|
+!i113 0
+R8
+R3
