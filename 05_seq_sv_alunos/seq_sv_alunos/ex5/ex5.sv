@@ -16,11 +16,20 @@ module ex5 #(
     output logic [N-1:0] RB
 );
 
-    logic [N-1:0] xmux, ymux, REGA;
+    logic [N-1:0] xmux, ymux, REGA, REGB;
 
-    assign 
+    assign RB = REGB;
+    assign xmux = (SA) ? X : REGB;
+    assign ymux = (SB) ? Y : REGA;
 
-    /// completar
-
+    always_ff @( posedge clock or posedge reset ) begin
+        if (reset) begin
+            REGA <= '0;
+            REGB <= '0;
+        end else begin
+            REGA <= (enableA) ? xmux : REGA;
+            REGB <= (enableB) ? ymux : REGB;
+        end
+    end
 
 endmodule
