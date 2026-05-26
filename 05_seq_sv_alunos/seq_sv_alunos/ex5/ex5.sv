@@ -7,28 +7,28 @@
 // ************************************************************
 
 module ex5 #(
-    parameter int N = 8;
+    parameter int N = 8
 )(
     input logic clock, reset,
     input logic enableA, enableB,
-    input logic SA, SB
+    input logic SA, SB,
     input logic [N-1:0] X, Y,
     output logic [N-1:0] RB
 );
 
-    logic [N-1:0] xmux, ymux, REGA, REGB;
+    logic [N-1:0] xmux, ymux, regA, regB;
 
-    assign RB = REGB;
-    assign xmux = (SA) ? X : REGB;
-    assign ymux = (SB) ? Y : REGA;
+    assign RB = regB;
+    assign xmux = (SA) ? X : regB;
+    assign ymux = (SB) ? Y : regA;
 
     always_ff @( posedge clock or posedge reset ) begin
         if (reset) begin
-            REGA <= '0;
-            REGB <= '0;
+            regA <= '0;
+            regB <= '0;
         end else begin
-            REGA <= (enableA) ? xmux : REGA;
-            REGB <= (enableB) ? ymux : REGB;
+            regA <= (enableA) ? xmux : regA;
+            regB <= (enableB) ? ymux : regB;
         end
     end
 
