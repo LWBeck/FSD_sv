@@ -9,12 +9,29 @@ module arbitro (
     output logic [3:0]  grant
 );
     // DECLARAR  OS ESTADOS 
+    typedef enum logic [1:0] { IDLE, sselect, ack, waiting } state;
     // DECLARAR  OS ESTADOS  EA  e  PE
+    state EA, PE;
 
     logic [1:0] sel;
 
-     // I N S E R I R   A   M A Q U I N A   D E   E S T A D O S 
+    // I N S E R I R   A   M A Q U I N A   D E   E S T A D O S
+    always_ff @(posedge clock or posedge reset) begin
+        if (reset)
+            EA <= IDLE;
+        else
+            EA <= PE;
+    end
 
+    always_comb begin
+        unique case (EA)
+            IDLE : PE = (req == 4'b0) ? IDLE : sselect;
+            sselect : PE = ack;
+            ack : PE = waiting;
+            waiting : PE = (rrelease[sel] == 1) ? IDLE : waiting;
+            default: PE = IDLE;
+        endcase
+    end
 
     // Bloco de dados
     always_ff @(posedge clock or posedge reset) begin

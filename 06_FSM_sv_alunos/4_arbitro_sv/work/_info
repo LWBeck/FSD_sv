@@ -1,0 +1,79 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.3 2025.09, Sep 15 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/25280294/Documentos/06_FSM_sv_alunos/4_arbitro_sv
+T_opt
+!i145 1
+!i144 0
+Z2 !s110 1781178245
+VLYBH^4loKEffiU[gLN?k_3
+04 2 4 work tb fast 0
+=1-d09466db32d9-6a2a9f85-220f6-144a
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc=lprn
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2025.3;82
+varbitro
+2arbitro.sv
+Z4 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+!s110 1781178244
+!i10b 1
+!s100 SgH5MkNaAb;_ijjiUfWC00
+IiFTeZTaWS[cImhmYLK7Wb0
+S1
+R1
+w1781178211
+8arbitro.sv
+Farbitro.sv
+!i122 0
+L0 4 52
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2025.3;82
+r1
+!s85 0
+31
+Z7 !s108 1781178244.000000
+!s107 arbitro.sv|
+!s90 -reportprogress|300|-work|work|arbitro.sv|
+!i113 0
+Z8 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vtb
+2arbitro_tb.sv
+R4
+R2
+!i10b 1
+!s100 [DW5?`TEjWDcdYozzIz_?2
+IPfGF4HNRUDiOLZDfX0F[H3
+S1
+R1
+w1745274836
+8arbitro_tb.sv
+Farbitro_tb.sv
+!i122 1
+L0 4 54
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 arbitro_tb.sv|
+!s90 -reportprogress|300|-work|work|arbitro_tb.sv|
+!i113 0
+R8
+R3
