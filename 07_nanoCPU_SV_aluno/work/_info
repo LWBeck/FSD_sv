@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.3 2025.09, Sep 15 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/25280294/Documentos/07_nanoCPU_SV_aluno
+T_opt
+!i145 1
+!i144 0
+Z2 !s110 1782388402
+VGfZ08<VN9bZ2KV4RLR_8<0
+04 10 4 work nanoCPU_TB fast 0
+=1-d09466db3347-6a3d16b2-ba453-137e
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc=lprn
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2025.3;82
+vNanoCPU
+Z4 2nanoCPU.sv
+Z5 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+R2
+!i10b 1
+!s100 l<j1gc[>BGKSX?NLO]NYa1
+I1W_U6@`OmmL5L@<17l9[A2
+S1
+R1
+Z6 w1782388306
+Z7 8nanoCPU.sv
+Z8 FnanoCPU.sv
+!i122 0
+L0 30 104
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2025.3;82
+r1
+!s85 0
+31
+Z11 !s108 1782388402.000000
+Z12 !s107 nanoCPU.sv|
+Z13 !s90 -reportprogress|300|nanoCPU.sv|
+!i113 0
+Z14 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@nano@c@p@u
+vnanoCPU_TB
+2nanoTB.sv
+R5
+R2
+!i10b 1
+!s100 lfM6bGG16LDQ;CeAhZe^I3
+IkJBBYfaER66bZ7T;hIBSV3
+S1
+R1
+w1782388393
+8nanoTB.sv
+FnanoTB.sv
+!i122 1
+L0 8 46
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 nanoTB.sv|
+!s90 -reportprogress|300|nanoTB.sv|
+!i113 0
+R14
+R3
+nnano@c@p@u_@t@b
+vReg16bit
+R4
+R5
+R2
+!i10b 1
+!s100 giEX4l`CAKh4XM^CnkE5B1
+ILCUkzKneL1KDJ34:KzkXC3
+S1
+R1
+R6
+R7
+R8
+!i122 0
+L0 12 14
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R3
+n@reg16bit
