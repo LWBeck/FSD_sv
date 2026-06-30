@@ -1,9 +1,9 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -color black /nanoCPU_TB/CPU/ck
-add wave -noupdate -color black /nanoCPU_TB/CPU/rst
+add wave -noupdate -color white /nanoCPU_TB/CPU/ck
+add wave -noupdate -color white /nanoCPU_TB/CPU/rst
 add wave -noupdate -divider memoria
-add wave -noupdate -color black /nanoCPU_TB/CPU/we
+add wave -noupdate -color white /nanoCPU_TB/CPU/we
 add wave -noupdate -radix hexadecimal /nanoCPU_TB/CPU/address
 add wave -noupdate -radix hexadecimal /nanoCPU_TB/CPU/dataR
 add wave -noupdate -radix hexadecimal /nanoCPU_TB/CPU/dataW
