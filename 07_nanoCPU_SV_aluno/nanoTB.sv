@@ -18,22 +18,31 @@ module nanoCPU_TB;
   // Memory array signal for 256 x 16-bit positions
   typedef logic [15:0] memory_array_t [0:255];
 
-   memory_array_t memory = '{
-       0: 'h01E0,   // R0 = PMEM[30]
-       1: 'h01F1,   // R1 = PMEM[31]
-       2: 'h0202,   // R2 = PMEM[32]
-       3: 'h0213,   // R3 = PMEM[33]
-       4: // R0 = R0 + R3
-       5: // R1 = R0 - R1
-       6: // R3 = R0 xor R0
-       7: // R2 = (R1 < R0)
-       8: 'hF000,   // FIM
+  memory_array_t memory = '{
+      0: 'h01E0,   // R0 = PMEM[30]
+      1: 'h01F1,   // R1 = PMEM[31]
+      2: 'h0202,   // R2 = PMEM[32]
+      3: 'h0213,   // R3 = PMEM[33]
+      4: 'h6003,   // R0 = R0 + R3
+      5: 'h5101,   // R1 = R0 - R1
+      6: 'h4300,   // R3 = R0 xor R0
+      7: 'h7210,   // R2 = (R1 < R0)
+      8: 'h10F0,   // Escrever conteúdo do R0 na posição 15
+      9: 'h1101,   // Escrever conteúdo do R1 na posição 16
+      10: 'h1112,  // Escrever conteúdo do R2 na posição 17
+      11: 'h3FF2,  // Salto condicional para endereço 255 se R2=1
+      20: 'h8000,  // INC R0
+      21: 'h8110,  // INC R1
+      22: 'h9220,  // DEC R2
+      23: 'h9330,  // DEC R3
+      24: 'hF000,  // FIM
       30: 'h1111,
       31: 'h2222,
       32: 'h3333,
       33: 'h4444,
-     default: 'h0000
-   };
+      255: 'h2140,  // No endereço 255 salta para endereço 20
+    default: 'h0000
+  };
 
   always #1 ck = ~ck;
 
