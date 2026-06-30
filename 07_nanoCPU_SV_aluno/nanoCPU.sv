@@ -36,7 +36,7 @@ module NanoCPU (
 );
     // instructions executed by the nanoCPU
     typedef enum logic [3:0] {
-        iREAD, iWRITE, iJMP, iBRANCH, iXOR, iSUB, iADD, iLESS, iEND
+        iREAD, iWRITE, iJMP, iBRANCH, iXOR, iSUB, iADD, iLESS, iEND, iINC, iDEC
     } instType;
     instType inst;
 
@@ -51,7 +51,7 @@ module NanoCPU (
     logic [3:0] wen;
     logic [1:0] addReg;
     logic [15:0] IR, RS1, RS2, muxRegIn, outalu, muxPC, PC;
-LD
+
    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    // data-path - responsible to execute the current instruction 
    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -60,7 +60,7 @@ LD
    assign dataW   = outalu;
    assign address = (EA==FETCH) ? PC[7:0] : IR[11:4];
    assign ce      = 1;
-   assign we      = 0;               // completar -atividade 6
+   assign we      = (EA==WRITE) ? 1 : 0;               // completar -atividade 6
    
     // register bank - 4 general purpose registers
    genvar i;
@@ -83,7 +83,9 @@ LD
             iWRITE: outalu = RS2;
             iXOR: outalu = RS1 ^ RS2;
             iSUB: outalu = RS1 - RS2;
-            iLESS: outalu = (RS1 < RS2) ? h'0001 : h'0002;
+            iLESS: outalu = (RS1 < RS2) ? 'h0001 : 'h0000;
+            iINC: outalu = RS1 + 1;
+            iDEC: outalu = RS1 - 1;
             default: outalu = RS1 + RS2;
         endcase
     end
@@ -92,22 +94,24 @@ LD
    Reg16bit R_IR (.ck(ck), .rst(rst), .we(wIR), .D(dataR), .Q(IR));
    Reg16bit R_PC (.ck(ck), .rst(rst), .we(wPC), .D(muxPC), .Q(PC));
 
-   assign  muxPC =  PC + 1;            // completar - atividade 7
+   assign  muxPC =  ((EA==JMP) || (EA==BRANCH && RS2[0])) ? {8'h00, IR[11:4]} : PC + 1; // completar - atividade 7
 
    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    // control block  - manages the execution of instructions
    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
    always_comb begin               // decode the current instruction
-        case (IR[15:12])// completar - atividade 3 iWRITE;
+        case (IR[15:12])
             4'h0: inst = iREAD;
-            4'h1: inst = iWRITE;        // completar - atividade 3 iWRITE;
+            4'h1: inst = iWRITE;    
             4'h2: inst = iJMP;
             4'h3: inst = iBRANCH;
             4'h4: inst = iXOR;
             4'h5: inst = iSUB;
             4'h6: inst = iADD;
             4'h7: inst = iLESS;
+            4'h8: inst = iINC;
+            4'h9: inst = iDEC;
             default: inst = iEND;
         endcase
     end
@@ -115,19 +119,9 @@ LD
     assign wPC  = (EA inside {LD, ALU, WRITE, JMP, BRANCH});
     assign wReg = (EA inside {LD, ALU});
     assign wIR  = (EA == FETCH);
-    assign wPC  = (EA inside {LD, ALU, WRITE, JMP, BRANCH});
-    assign wReg = (EA inside {LD, ALU});
-    assign wIR  = (EA == FETCH);
 
-    always_ff @(posedge ck or pos
-
-    always_ff @(posedge ck or posedge rst) begin    
+    always_ff @(posedge ck or posedge rst) begin
       if (rst)
-    assign wPC  = (EA inside {LD, ALU, WRITE, JMP, BRANCH});
-    assign wReg = (EA inside {LD, ALU});
-    assign wIR  = (EA == FETCH);
-
-    always_ff @(posedge ck or pos
         EA <= IDLE;
       else begin
         unique case (EA)
@@ -144,7 +138,7 @@ LD
             fim:     EA <= fim;
             default: EA <= FETCH;
         endcase
-       end         // completar - atividade 3
+       end
    end
 
 endmodule
