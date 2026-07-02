@@ -19,32 +19,39 @@ module nanoCPU_TB;
   typedef logic [15:0] memory_array_t [0:255];
 
   memory_array_t memory = '{
-      0: 'h01E0,   // R0 = PMEM[30]
-      1: 'h01F1,   // R1 = PMEM[31]
-      2: 'h0202,   // R2 = PMEM[32]
-      3: 'h0213,   // R3 = PMEM[33]
-      4: 'h6003,   // R0 = R0 + R3
-      5: 'h5101,   // R1 = R0 - R1
-      6: 'h4300,   // R3 = R0 xor R0
-      7: 'h7210,   // R2 = (R1 < R0)
-      8: 'h10F0,   // Escrever conteúdo do R0 na posição 15
-      9: 'h1101,   // Escrever conteúdo do R1 na posição 16
-      10: 'h1112,  // Escrever conteúdo do R2 na posição 17
-      11: 'h3FF2,  // Salto condicional para endereço 255 se R2=1
-      20: 'h8000,  // INC R0
-      21: 'h8110,  // INC R1
-      22: 'h9220,  // DEC R2
-      23: 'h9330,  // DEC R3
-      24: 'hF000,  // FIM
-      30: 'h1111,
-      31: 'h2222,
-      32: 'h3333,
-      33: 'h4444,
-      255: 'h2140,  // No endereço 255 salta para endereço 20
+      0: 'h0141,   // R1 = PMEM[20]
+      1: 'h0152,   // R2 = PMEM[21]
+
+      2: 'h4000,   // R0 = R0 xor R0 (zera o R0)
+      3: 'h8000,   // inc R0 (R0 = 1)
+      4: 'h7320,   // R3 = (R2 < R0) 
+      5: 'h3103,   // se R3 = 1 salta para o fim
+
+      6: 'h4000,   // R0 = R0 xor R0 (zera o R0/quociente)
+
+      7: 'h5112,   // R1 = R1 - R2
+
+      8: 'h4333,   // R3 = R3 xor R3 (zera o R3)
+      9: 'h7313,   // R3 = (R1 < 0)
+      10: 'h30D3,   // pula para save (13) se R3 = 1
+      
+      11: 'h8000,  // inc R0 (incrementa o quociente)
+      12: 'h2070,  // loop (salto para 7)
+
+      13: 'h6112, // R1 = R1 + R2
+      14: 'h1160, // grava R0 (quociente) na memória
+      15: 'h1171, // grava R1 (resto) na memória
+
+      16: 'hF000,
+
+      20: 'd100,
+      21: 'd22,
+      22: 'd0,
+      23: 'd0,
     default: 'h0000
   };
 
-  always #1 ck = ~ck;
+    always #1 ck = ~ck;
 
   NanoCPU CPU ( .ck(ck), .rst(rst), .address(address), .dataR(dataR), .dataW(dataW), .ce(ce), .we(we) );
 

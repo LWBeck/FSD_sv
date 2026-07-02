@@ -83,7 +83,7 @@ module NanoCPU (
             iWRITE: outalu = RS2;
             iXOR: outalu = RS1 ^ RS2;
             iSUB: outalu = RS1 - RS2;
-            iLESS: outalu = (RS1 < RS2) ? 'h0001 : 'h0000;
+            iLESS: outalu = ($signed(RS1) < $signed(RS2)) ? 'h0001 : 'h0000;
             iINC: outalu = RS1 + 1;
             iDEC: outalu = RS1 - 1;
             default: outalu = RS1 + RS2;
